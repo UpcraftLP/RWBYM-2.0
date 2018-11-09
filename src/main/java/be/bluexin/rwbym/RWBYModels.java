@@ -1,40 +1,27 @@
 package be.bluexin.rwbym;
 
-import be.bluexin.rwbym.Init.RWBYBiomes;
-import be.bluexin.rwbym.Init.RWBYCreativeTabs;
-import be.bluexin.rwbym.capabilities.CapabilityHandler;
-import be.bluexin.rwbym.capabilities.ruby.IRuby;
-import be.bluexin.rwbym.capabilities.ruby.Ruby;
-import be.bluexin.rwbym.capabilities.ruby.RubyStorage;
+import be.bluexin.rwbym.Init.*;
+import be.bluexin.rwbym.capabilities.ruby.*;
 import be.bluexin.rwbym.proxy.CommonProxy;
 import be.bluexin.rwbym.utility.RegUtil;
-import be.bluexin.rwbym.weaponry.ICustomItem;
-import be.bluexin.rwbym.weaponry.RWBYSword;
+import be.bluexin.rwbym.weaponry.*;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
+import net.minecraft.init.*;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.item.*;
+import net.minecraft.util.*;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.network.IGuiHandler;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.*;
 import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.List;
@@ -92,9 +79,8 @@ public class RWBYModels {
             //MinecraftForge.EVENT_BUS.register(new PlayerRenderHandler());
         }
         MinecraftForge.EVENT_BUS.register(new EntityUpdatesHandler());
-		MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
 
-        CapabilityManager.INSTANCE.register(IRuby.class, new RubyStorage(), Ruby.class);
+        CapabilityManager.INSTANCE.register(IRuby.class, new RubyStorage(), Ruby::new);
 
         //RWBYNetworkHandler.init();
         RWBYCreativeTabs.init();
