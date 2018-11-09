@@ -15,14 +15,17 @@ version = "1.12.2 v2"
 group = "be.bluexin"
 archivesBaseName = "rwbymodels"
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
-}
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 minecraft {
     version = "1.12.2-14.23.5.2768"
-    runDir = "run"
+    if (project.hasProperty('runDir')) {
+        runDir = project.runDir
+    } else if (file('../run').exists()) {
+        runDir = "../run"
+    } else {
+        runDir = "run"
+    }
 
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
