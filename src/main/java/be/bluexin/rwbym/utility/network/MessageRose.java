@@ -1,10 +1,8 @@
 package be.bluexin.rwbym.utility.network;
 
-import be.bluexin.rwbym.Semblances;
 import be.bluexin.rwbym.capabilities.ruby.RubyProvider;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.Vec3d;
 
 public class MessageRose extends MessageBase<MessageRose>{
 
@@ -33,12 +31,11 @@ public class MessageRose extends MessageBase<MessageRose>{
 
    @Override
     public void handleServerSide(MessageRose message, EntityPlayer player){
-    	
     	if (message.status) {
-    		//player.getCapability(RubyProvider.RUBY_CAP, null).activate(player);
+    		player.getCapability(RubyProvider.RUBY_CAP, null).activate(player);
     	}
     	else {
-    		//player.getCapability(RubyProvider.RUBY_CAP, null).setActiveStatus(false);
+    		player.getCapability(RubyProvider.RUBY_CAP, null).setActiveStatus(false);
     	}
     }
 }
