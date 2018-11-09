@@ -1,35 +1,22 @@
 package be.bluexin.rwbym.weaponry;
 
-        import be.bluexin.rwbym.Init.RWBYCreativeTabs;
         import be.bluexin.rwbym.Init.RWBYItems;
-        import be.bluexin.rwbym.RWBYModels;
-        import net.minecraft.client.model.ModelBiped;
-        import net.minecraft.client.model.ModelPlayer;
-        import net.minecraft.creativetab.CreativeTabs;
-        import net.minecraft.entity.Entity;
-        import net.minecraft.entity.EntityLivingBase;
-        import net.minecraft.entity.player.EntityPlayer;
-        import net.minecraft.inventory.EntityEquipmentSlot;
-        import net.minecraft.item.Item;
-        import net.minecraft.item.ItemArmor;
-        import net.minecraft.item.ItemStack;
-        import net.minecraft.item.ItemArmor.ArmorMaterial;
-        import net.minecraft.nbt.JsonToNBT;
-        import net.minecraft.nbt.NBTException;
-        import net.minecraft.nbt.NBTTagCompound;
-        import net.minecraft.util.ActionResult;
-        import net.minecraft.util.EnumActionResult;
-        import net.minecraft.util.EnumHand;
-        import net.minecraft.world.World;
-        import net.minecraftforge.fml.relauncher.Side;
-        import net.minecraftforge.fml.relauncher.SideOnly;
-        import org.apache.logging.log4j.LogManager;
-        import scala.Int;
-        import scala.collection.generic.BitOperations;
+import be.bluexin.rwbym.RWBYModels;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.*;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.*;
+import net.minecraft.nbt.*;
+import net.minecraft.util.*;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.*;
+import org.apache.logging.log4j.LogManager;
 
-        import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.ParametersAreNonnullByDefault;
 
-        import static be.bluexin.rwbym.weaponry.ICustomItem.KEY;
+import static be.bluexin.rwbym.weaponry.ICustomItem.*;
 
 public class ArmourBase extends ItemArmor {
     private boolean fire = false;
@@ -46,7 +33,7 @@ public class ArmourBase extends ItemArmor {
         if (name.contains("korekosmouwind")) wind = true;
         this.setCreativeTab(creativetab);
         this.setRegistryName("rwbym", name);
-        this.setUnlocalizedName(name);
+        this.setTranslationKey(name);
         this.data = data;
     }
 

@@ -1,38 +1,23 @@
 package be.bluexin.rwbym.weaponry;
 
-import be.bluexin.rwbym.Init.RWBYCreativeTabs;
 import be.bluexin.rwbym.Init.RWBYItems;
-import be.bluexin.rwbym.RWBYModels;
-import be.bluexin.rwbym.RWBYSoundHandler;
-import be.bluexin.rwbym.entity.EntityLargeFireball;
-import be.bluexin.rwbym.entity.EntityNeverMore;
+import be.bluexin.rwbym.*;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
-import net.minecraft.init.SoundEvents;
+import net.minecraft.init.*;
 import net.minecraft.item.*;
-import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.NBTException;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.nbt.*;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.*;
 import org.apache.logging.log4j.LogManager;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+
+import javax.annotation.*;
 
 /**
  * Part of rwbym
@@ -73,7 +58,7 @@ public class RWBYBow extends ItemBow implements ICustomItem {
     public RWBYBow(String name, int durability, int drawSpeed, int enchantability, String data, String morph, String ammo, boolean noCharge, float projectileSpeed, boolean usesAmmo, int recoilType, int enchantmentglow, CreativeTabs creativetab) {
         this.setMaxDamage(durability);
         this.setRegistryName(new ResourceLocation(RWBYModels.MODID, name));
-        this.setUnlocalizedName(this.getRegistryName().toString());
+        this.setTranslationKey(this.getRegistryName().toString());
         this.setCreativeTab(creativetab);
         this.drawSpeed = drawSpeed;
         this.data = data;

@@ -13,7 +13,7 @@ public class RWBYCreativeTabs {
         tab_rwbyitems = new CreativeTabs("rwby_items") {
 
             @Override
-            public ItemStack getTabIconItem() {
+            public ItemStack createIcon() {
                 return new ItemStack(RWBYItems.crmag);
             }
 
@@ -22,7 +22,7 @@ public class RWBYCreativeTabs {
         tab_rwbyweapons = new CreativeTabs("rwby_weapons") {
 
             @Override
-            public ItemStack getTabIconItem() {
+            public ItemStack createIcon() {
                 return new ItemStack(RWBYItems.icon);
             }
 

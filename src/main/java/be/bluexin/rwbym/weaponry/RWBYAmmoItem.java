@@ -1,24 +1,17 @@
 package be.bluexin.rwbym.weaponry;
 
-import be.bluexin.rwbym.Init.RWBYCreativeTabs;
 import be.bluexin.rwbym.RWBYModels;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Enchantments;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.NBTException;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.item.*;
+import net.minecraft.nbt.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.*;
 
 /**
  * Part of rwbym by Bluexin.
@@ -48,7 +41,7 @@ public class RWBYAmmoItem extends Item implements ICustomItem {
     public RWBYAmmoItem(String name, int ammoMax, boolean canPickup, String texture, float damages, boolean gravity, boolean infinite, String nbt, String potion, int durability, double baseDamage, CreativeTabs creativetab) {
         this.setCreativeTab(creativetab);
         this.setRegistryName(new ResourceLocation(RWBYModels.MODID, name));
-        this.setUnlocalizedName(this.getRegistryName().toString());
+        this.setTranslationKey(this.getRegistryName().toString());
         this.setMaxStackSize(ammoMax);
         this.damages = damages;
         this.canPickup = canPickup;

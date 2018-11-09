@@ -20,7 +20,7 @@ public class RubyProvider implements ICapabilitySerializable<NBTBase> {
 
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-		return capability == RUBY_CAP ? RUBY_CAP.<T> cast(this.instance) : null;
+		return capability == RUBY_CAP ? RUBY_CAP.cast(this.instance) : null;
 	}
 
 	@Override
