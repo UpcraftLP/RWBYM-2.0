@@ -10,9 +10,7 @@ bin
 out
 *.ipr
 *.iws
-*.iml
 .idea
-.git
 
 # gradle
 build
